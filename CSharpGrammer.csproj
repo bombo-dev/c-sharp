@@ -10,9 +10,15 @@
   <ItemGroup>
     <None Remove="datatype\" />
     <None Remove="debug\" />
+    <None Remove="SelectClass\" />
+    <None Remove="printer\" />
+    <None Remove="input\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="datatype\" />
     <Folder Include="debug\" />
+    <Folder Include="SelectClass\" />
+    <Folder Include="printer\" />
+    <Folder Include="input\" />
   </ItemGroup>
 </Project>
