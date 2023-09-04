@@ -9,8 +9,10 @@
 
   <ItemGroup>
     <None Remove="datatype\" />
+    <None Remove="debug\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="datatype\" />
+    <Folder Include="debug\" />
   </ItemGroup>
 </Project>
