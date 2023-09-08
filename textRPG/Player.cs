@@ -5,60 +5,35 @@ public enum PlayerType {
   MAGE = 3
 }
 
-public class Player {
-  protected PlayerType type;
-  protected int hp;
-  protected int attack;
+public class Player : Creature {
+  protected PlayerType playerType;
 
-  protected Player(PlayerType type) {
-    this.type = type;
+  protected Player(PlayerType playerType, int hp, int attack) : base(CreatureType.PLAYER, hp, attack) {
+    this.playerType = playerType;
   }
 
-  protected new PlayerType GetType() {
-    return this.type;
-  }
-
-  protected int GetHp() {
-    return this.hp;
-  }
-
-  protected int GetAttack() {
-    return this.attack;
-  }
-
-  public bool IsDead() {
-    return this.hp <= 0;
-  }
-
-  public void OnDamaged(int damage) {
-    this.hp -= damage;
-
-    if (this.hp < 0) {
-      this.hp = 0;
-    }
+  public PlayerType GetPlayerType() {
+    return this.playerType;
   }
 }
 
 public class Knight : Player {
 
-  public Knight(int hp, int attack) : base(PlayerType.KNIGHT) {
-    this.hp = hp;
-    this.attack = attack;
+  public Knight() : base(PlayerType.KNIGHT, 100, 10) {
+    
   }
 }
 
 public class Archer : Player {
 
-  public Archer(int hp, int attack) : base(PlayerType.ARCHER) {
-    this.hp = hp;
-    this.attack = attack;
+  public Archer() : base(PlayerType.ARCHER, 70, 12) {
+
   }
 }
 
 public class Mage : Player {
 
-  public Mage(int hp, int attack) : base(PlayerType.MAGE) {
-    this.hp = hp;
-    this.attack = attack;
+  public Mage() : base(PlayerType.MAGE, 50, 15) {
+
   }
 }
